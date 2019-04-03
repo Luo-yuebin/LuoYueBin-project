@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>LuoYueBin-Project</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<nav class="nav">
+
+	<ul class="nav__list">
+		<li class="nav__item" id="nav1" style="cursor: default;">
+			<a class="nav__link">
+				<div class="nav__link-content">
+					<span class="nav__link-num">01</span>
+					<div class="nav__link-title">进入游戏</div>
+					<div class="nav__link-desc">一个躲避障碍的游戏</div>
+				</div>
+				<div class="nav__link-base"></div>
+			</a>
+			<div class="nav__item-line"></div>
+		</li>
+		<li class="nav__item" data-toggle="modal" data-target="#gameRuleModal" style="cursor: default;">
+			<a class="nav__link">
+				<div class="nav__link-content">
+					<span class="nav__link-num">02</span>
+					<div class="nav__link-title">游戏规则</div>
+					<div class="nav__link-desc">游戏玩法及其介绍</div>
+					<!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gameRuleModal">查看游戏规则</button>-->
+				</div>
+				<div class="nav__link-base"></div>
+			</a>
+			<div class="nav__item-line"></div>
+		</li>
+		<li class="nav__item" data-toggle="modal" data-target="#aboutGameModal" style="cursor: default;">
+			<a class="nav__link">
+				<div class="nav__link-content">
+					<span class="nav__link-num">03</span>
+					<div class="nav__link-title">关于游戏</div>
+					<div class="nav__link-desc">游戏涉及的技术</div>
+					<!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#aboutGameModal">查看关于游戏</button>-->
+				</div>
+				<div class="nav__link-base"></div>
+			</a>
+			<div class="nav__item-line"></div>
+		</li>
+		<li class="nav__item" data-toggle="modal" data-target="#gameAdvicesModal" style="cursor: default;">
+			<a class="nav__link">
+				<div class="nav__link-content">
+					<span class="nav__link-num">04</span>
+					<div class="nav__link-title">游戏建议</div>
+					<div class="nav__link-desc">欢迎提供建议</div>
+					<!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gameAdvicesModal">查看关于游戏</button>-->
+				</div>
+				<div class="nav__link-base"></div>
+			</a>
+			<div class="nav__item-line"></div>
+		</li>
+	</ul>
+
+	<a class="nav__logo-link" style="visibility: hidden; opacity: 0;">
+
+		<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1057 289">
+
+			<title>LuoYueBin Project</title>
+
+			<text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Oswald, sans-serif" font-size="84" id="svg_1" y="116" x="516" stroke-width="0" stroke="#000" fill="#ffffff">LUOYUEBIN</text>
+
+			<path d="M484.8,93V22.11H1047.38V144H535.8" transform="translate(1.16 1.07)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="17"></path>
+
+			<g fill="none" stroke="#47C2BB" stroke-miterlimit="10" stroke-width="17">
+				<line x1="447.67" y1="145.15" x2="524.2" y2="145.15"></line>
+				<line x1="485.93" y1="106.8" x2="485.93" y2="183.33"></line>
+			</g>
+
+			<text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Oswald, sans-serif" font-size="84" id="svg_1" y="238" x="73" stroke-width="0" stroke="#000" fill="#ffffff">PROJECT</text>
+
+			<path d="M484.77,195V266H44V144.08H433.75" transform="translate(1.16 1.07)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="17"></path>
+
+		</svg>
+
+	</a>
+
+</nav>
+<svg class="nav__bg" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient class="nav__grad" x1="92.6356902%" y1="7.36430977%" x2="0%" y2="100%" id="nav-grad">
+            <stop stop-color="#47C2BB" offset="20%"></stop>
+            <stop stop-color="#FFBC9A" offset="100%"></stop>
+        </linearGradient>
+		<mask id="nav__bg-mask" class="nav__bg-mask" maskUnits="userSpaceOnUse"x="0" y="0" width="100" height="100">
+		  	<rect class="nav__bg-mask-rect" x="0" y="0" width="25" height="100" fill="white"/>
+			<rect class="nav__bg-mask-rect" x="24.9" y="0" width="25.1" height="100" fill="white"/>
+			<rect class="nav__bg-mask-rect" x="49.9" y="0" width="25.1" height="100" fill="white"/>
+			<rect class="nav__bg-mask-rect" x="74.9" y="0" width="25.1" height="100" fill="white"/>
+		</mask>
+    </defs>
+    <rect x="0" y="0" width="100" height="100" fill="url(#nav-grad)" mask="url(#nav__bg-mask)"></rect>
+</svg>
+
+<button class="nav-btn">
+	<svg class="burger <?php echo $darkBurgerClass; ?>" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+<!-- 				<title>Navigation Button Icon</title> -->
+				<rect class="burger__stroke"  x="2" y="2" width="32" height="32" fill="none" stroke="" stroke-miterlimit="10" stroke-width="4"/>
+				<polyline class="burger__stroke-over"points="18 2 34 2 34 34 2 34 2 2 18 2" fill="none" stroke="" stroke-miterlimit="10" stroke-width="4"/>
+				<g class="burger__plus">
+					<rect class="burger__plus-left" x="8" y="16" width="10" height="4"/>
+					<rect class="burger__plus-btm" x="16" y="18" width="4" height="10"/>
+					<rect class="burger__plus-right" x="18" y="16" width="10" height="4"/>
+					<rect class="burger__plus-top" x="16" y="8" width="4" height="10"/>
+				</g>
+			</svg>
+</button>
+
+<div class="content">
+	<svg class="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1057 289">
+		<title>LuoYueBin Project</title>
+
+		<text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Oswald, sans-serif" font-size="84" id="svg_1" y="116" x="516" stroke-width="0" stroke="#000" fill="#ffffff">LUOYUEBIN</text>
+
+		<path d="M484.8,93V22.11H1047.38V144H535.8" transform="translate(1.16 1.07)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="17"></path>
+
+		<g fill="none" stroke="#47C2BB" stroke-miterlimit="10" stroke-width="17">
+			<line x1="447.67" y1="145.15" x2="524.2" y2="145.15"></line>
+			<line x1="485.93" y1="106.8" x2="485.93" y2="183.33"></line>
+		</g>
+
+		<text font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Oswald, sans-serif" font-size="84" id="svg_1" y="238" x="73" stroke-width="0" stroke="#000" fill="#ffffff">PROJECT</text>
+
+		<path d="M484.77,195V266H44V144.08H433.75" transform="translate(1.16 1.07)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="17"></path>
+
+	</svg>
+</div>
+
+<div>
+
+</div>
+
+<!--游戏规则模态框 begin-->
+<div class="modal fade" id="gameRuleModal" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">游戏规则</h4>
+			</div>
+			<div class="modal-body">
+				<!--<ol style="margin-right: 25px; margin-top: 20px;">-->
+					<!--<li><div style="height: 150px; position: relative; top: -20px;"><p style="float: left;">你可以通过鼠标的移动来操控飞机</p><img src="images/fly.gif" style="width: 200px; height: 125px; float: right;"></div></li>-->
+					<!--<li><div style="height: 150px; position: relative; top: -20px;"><p style="float: left">撞到红色障碍会扣体力值，你需要躲开它</p><img src="images/red.gif" style="width: 200px; height: 125px; float: right;"></div></li>-->
+					<!--<li><div style="height: 150px; position: relative; top: -20px;"><p style="float: left">蓝色碎片是能量来源，你需要吃到它来维持体力</p><img src="images/blue.gif" style="width: 200px; height: 125px; float: right;"></div></li>-->
+					<!--<li><div style="height: 150px; position: relative; top: -20px;"><p style="float: left">当体力值全部消耗完，则游戏结束</p><img src="images/end.gif" style="width: 200px; height: 125px; float: right;"></div></li>-->
+				<!--</ol>-->
+
+                <!--轮播图 begin-->
+                <div id="myCarousel" class="carousel slide" style="width: 400px; margin-left: auto; margin-right: auto;">
+                    <!--分页器-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <!--轮播项目-->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="images/fly.gif" alt="slide1" style="width: 400px;">
+                            <div class="carousel-caption">你可以通过鼠标的移动来操控飞机</div>
+                        </div>
+                        <div class="item">
+                            <img src="images/red.gif" alt="slide2">
+                            <div class="carousel-caption">撞到红色障碍会扣体力值，你需要躲开</div>
+                        </div>
+                        <div class="item">
+                            <img src="images/blue.gif" alt="slide3">
+                            <div class="carousel-caption">蓝色碎片是能量来源，你需要维持体力</div>
+                        </div>
+                        <div class="item">
+                            <img src="images/end.gif" alt="slide4">
+                            <div class="carousel-caption">当体力值全部消耗完，则游戏结束</div>
+                        </div>
+                    </div>
+                    <!--导航按钮-->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <!--轮播图 end-->
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--游戏规则模态框 end-->
+
+<!--关于游戏模态框 begin-->
+<div class="modal fade" id="aboutGameModal" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">关于游戏</h4>
+			</div>
+			<div class="modal-body">
+				<ol>
+					<li>使用的的编程语言：HTML、CSS、CSS3、JavaScript</li>
+					<li>使用的插件库：jQuery、Three.js</li>
+					<li>使用的框架：Bootstrap</li>
+					<li>开发工具：WebStorm、Sublime、Chrome调试工具</li>
+				</ol>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--关于游戏模态框 end-->
+
+<!--游戏建议模态框 begin-->
+<div class="modal fade" id="gameAdvicesModal" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">游戏建议</h4>
+			</div>
+			<div class="modal-body">
+				<l>
+					<li>Address：广新路388号仲恺农业工程学院</li>
+					<li>E-mail：925849858@qq.com</li>
+					<li>Tel：13602214544</li>
+					<li>QQ：925849858</li>
+				</l>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--游戏建议模态框 end-->
+
+
+<!--JS引用-->
+<script src="js/jquery.min.js"></script>
+<!--<script src="js/bootstrap-js/modal.js"></script>-->
+<script src="js/bootstrap.js"></script>
+<script src="js/DrawSVGPlugin.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/boysgirls.js"></script>
+
+<script>
+	$('#nav1').click(function() {
+		window.location.href = 'TheAviator/index.html'
+	});
+</script>
+
+</body>
+</html>
